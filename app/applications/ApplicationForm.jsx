@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   Form,
@@ -15,6 +15,9 @@ import {
 } from "antd";
 import { LeftOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { EllipsisVertical } from "lucide-react";
+import ReactQuill from "react-quill";
+
+import "react-quill/dist/quill.snow.css";
 
 const { Option } = Select;
 
@@ -669,36 +672,116 @@ export default function ApplicationForm() {
             </Row>
 
             <div className="text-primary mb-3">Добавить язык</div>
-            <div className="text-gray-500 border-b mb-3">Дополнительные требования</div>
+            <div className="text-gray-500 border-b mb-3">
+              Дополнительные требования
+            </div>
 
-            <div className="w-full md:w-1/2">
-                  <Form.Item label="Командировки">
-                    <Divider />
-                    <div className="space-y-2 w-4/6">
-                      <Form.Item
-                        name="tripAbroad"
-                        valuePropName="checked"
-                        noStyle
-                      >
-                        <Checkbox>Наличие документов государственного образца</Checkbox>
-                      </Form.Item>
-                      <Form.Item name="tripRB" valuePropName="checked" noStyle>
-                        <Checkbox>Отсутствие записи в трудовой книжке об увольнении по </Checkbox>
-                      </Form.Item>
-                    </div>
+            <div className="w-full">
+              <Form.Item>
+                <div className="space-y-2 w-4/6">
+                  <Form.Item name="tripAbroad" valuePropName="checked" noStyle>
+                    <Checkbox>
+                      Наличие документов государственного образца
+                    </Checkbox>
+                  </Form.Item>
+                  <Form.Item name="tripRB" valuePropName="checked" noStyle>
+                    <Checkbox>
+                      Отсутствие записи в трудовой книжке об увольнении по
+                      дискредитирующим основаниям
+                    </Checkbox>
+                  </Form.Item>
+                  <Form.Item name="tripRB" valuePropName="checked" noStyle>
+                    <Checkbox>Отсутствие медицинских противопоказаний</Checkbox>
                   </Form.Item>
                 </div>
+              </Form.Item>
+            </div>
 
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="space-y-2 w-4/6">
+                <Form.Item name="tripAbroad" valuePropName="checked" noStyle>
+                  <Checkbox>
+                    Наличие водительского удостоверения с указанием категорий
+                  </Checkbox>
+                </Form.Item>
+              </div>
+              <div>
+                <Form.Item name="A" valuePropName="checked" noStyle>
+                  <Checkbox>A</Checkbox>
+                </Form.Item>
+
+                <Form.Item name="B" valuePropName="checked" noStyle>
+                  <Checkbox checked>B</Checkbox>
+                </Form.Item>
+
+                <Form.Item name="C" valuePropName="checked" noStyle>
+                  <Checkbox checked>C</Checkbox>
+                </Form.Item>
+
+                <Form.Item name="D" valuePropName="checked" noStyle>
+                  <Checkbox checked>D</Checkbox>
+                </Form.Item>
+
+                <Form.Item name="E" valuePropName="checked" noStyle>
+                  <Checkbox>E</Checkbox>
+                </Form.Item>
+
+                <Form.Item name="F" valuePropName="checked" noStyle>
+                  <Checkbox>БУ тракторист</Checkbox>
+                </Form.Item>
+              </div>
+            </div>
+            <div className="mt-2">
+              <Form.Item name="Возможность" valuePropName="checked" noStyle>
+                <Checkbox>Возможность переезда</Checkbox>
+              </Form.Item>
+            </div>
+
+            <div className="mt-2 w-1/2">
+              <Form.Item name="personalQualities">
+                <Select
+                  mode="multiple"
+                  placeholder="Выберите личные качества"
+                  style={{ width: "100%" }}
+                >
+                  <Select.Option value="responsible">item1</Select.Option>
+                  <Select.Option value="punctual">item2</Select.Option>
+                  <Select.Option value="organized">item3</Select.Option>
+                  <Select.Option value="communicative">item4</Select.Option>
+                  <Select.Option value="creative">item5</Select.Option>
+                  <Select.Option value="teamPlayer">item6</Select.Option>
+                  <Select.Option value="stressResistant">item7</Select.Option>
+                  <Select.Option value="leader">item8</Select.Option>
+                  <Select.Option value="hardworking">item9</Select.Option>
+                  <Select.Option value="flexible">item10</Select.Option>
+                  <Select.Option value="motivated">item11</Select.Option>
+                </Select>
+              </Form.Item>
+            </div>
           </Form>
         </Card>
       </div>
 
       {/* Fourth Section */}
       <div className="rounded-[18px] p-0 border border-gray-300">
-        <div className="text-[#0D0E0C73] px-4 text-[16px] py-2 font-semibold">
-          Заключение
-        </div>
-        <Card className="rounded-[18px]">Fourth card content</Card>
+        <Card className="rounded-[18px]">
+          <div>Чем предстоит заниматься</div>
+
+          <ReactQuill
+  className="rounded-lg border-2 border-primary"
+  theme="snow"
+  value="Контроль и анализ выполнения технологических режимов подготовки и учета нефти и газа. 
+Анализ и контроль текущих и годовых отчетов о производственной деятельности предприятия в области добычи нефти и газа, по направлению подготовки и системе сбора. 
+Анализ и контроль за выполнением организационно-технических мероприятий в части добычи и транспортировки добываемой продукции. 
+Формирование и контроль за выполнением программ строительства, замены и диагностики нефтепроводов и водоводов на предприятии. 
+Контроль за выполнением программ по борьбе с коррозией нефтепроводов и водоводов. 
+Контроль за работой установок по подготовке и переработке нефти, попутного и природного газа. 
+Составление и корректировка заданий на закупку услуг, оборудования и нефтехимии для систем сбора и подготовки нефти и газа и поддержания пластового давления. 
+Внедрение нового оборудования, химических реагентов и технологий в системах сбора и подготовки нефти и газа, и поддержания пластового давления. Составление и корректировка ежегодных заявок обособленных подразделений по материально-техническому обеспечению производства в подготовке и транспорту нефти. 
+Участие в организации выполнения, контроле и учете утвержденных мероприятий, приказов, распоряжений и других руководящих документов в области деятельности отдела"
+/>
+
+        </Card>
       </div>
     </div>
   );
