@@ -32,10 +32,12 @@ export default function MainLayout({
         },
         Input: {
           colorPrimary: '#389E0D',
+           
         },
         Select: {
           colorPrimary: '#389E0D',
-        }
+        },
+        
       },
     }}
     >
@@ -43,12 +45,12 @@ export default function MainLayout({
         <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
         <div
           className={cn(
-            "transition-all duration-300 ease-in-out",
+            "transition-all duration-300 ease-in-out ",
             isSidebarOpen ? "ml-64" : "ml-20"
           )}
         >
           <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-          <main className="p-6">{children}</main>
+          <main className="p-10">{children}</main>
         </div>
       </div>
     </ConfigProvider>
