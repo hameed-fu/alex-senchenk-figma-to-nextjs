@@ -24,7 +24,7 @@ export default function MainLayout({
         Menu: {
           colorPrimary: '#389E0D',         // Active menu color
           itemSelectedColor: '#389E0D',    // Selected text color
-          itemSelectedBg: '#389E0D',       // Light green background
+          itemSelectedBg: '#D9F7BE',       // Light green background
           itemHoverColor: '#52c41a',       // Hover text color
         },
         Button: {
