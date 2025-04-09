@@ -2,21 +2,20 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Edit, Grid, ListCollapse, Route, Table, Users, UsersRound } from "lucide-react";
+import { Button } from "antd";
+
+import {
+  Edit,
+  Grid,
+  ListCollapse,
+  Route,
+  Table,
+  Users,
+  UsersRound,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  FileTextOutlined,
-  BarChartOutlined,
-  FolderOpenOutlined,
-  DeleteOutlined,
-  FileOutlined,
-  CompassOutlined,
-  IdcardOutlined,
-  CheckOutlined,
-} from "@ant-design/icons";
+import { IdcardOutlined } from "@ant-design/icons";
 import { Divider, Menu } from "antd";
 
 const sidebarItems = [
@@ -35,20 +34,20 @@ const sidebarItems = [
   },
   {
     name: "Маршруты",
-    icon: <Route className="h-4 w-4"  />,
+    icon: <Route className="h-4 w-4" />,
     key: "routes",
     children: [],
   },
   {
     name: "Профили должностей",
-    icon: <UsersRound className="h-4 w-4"  />,
+    icon: <UsersRound className="h-4 w-4" />,
     key: "job-profiles",
     children: [],
   },
   { type: "divider" },
   {
     name: "Справочник",
-    icon: <Grid className="h-4 w-4"  />,
+    icon: <Grid className="h-4 w-4" />,
     key: "reference",
     children: [],
   },
@@ -88,7 +87,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     setSelectedKey(e.key);
   };
 
-  const activeKey = "/";  
+  const activeKey = "/";
 
   const items = sidebarItems.map((item, index) => {
     if (item.type === "divider") {
@@ -99,7 +98,6 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       };
     }
 
-   
     return {
       key: item.key,
       icon: item.icon,
@@ -110,19 +108,11 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           return {
             key: `${item.key}/${child.key}`,
             icon: child.icon,
-            label: (
-              <Link
-                href={`/${item.key}/${child.key}`}
-               
-              >
-                {child.name}
-              </Link>
-            ),
+            label: <Link href={`/${item.key}/${child.key}`}>{child.name}</Link>,
           };
         }) ?? [],
     };
   });
-  
 
   return (
     <div className="relative">
@@ -143,7 +133,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           </span>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-4rem)] px-2">
+        <div className="h-[calc(100vh-4rem)] px-2">
           <Menu
             mode="inline"
             openKeys={openKeys}
@@ -152,17 +142,25 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
             onClick={onClick}
             style={{ border: "none" }}
             items={items}
-            
           />
-        </ScrollArea>
+        </div>
+        
       </div>
 
       {/* Toggle Sidebar */}
+     
       <Button
-        variant="ghost"
-        className="fixed bottom-4 left-4 z-50 bg-white rounded-full p-2 shadow-md"
+        type="text"
+        className="fixed bottom-4 left-4 z-50"
+        style={{
+          padding: 10,
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          border: "none",
+        }}
         onClick={() => setIsOpen(!isOpen)}
       >
+        
         <ListCollapse
           className={cn(
             "h-5 w-5 text-gray-700 transition-transform duration-200",
