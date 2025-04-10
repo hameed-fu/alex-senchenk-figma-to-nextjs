@@ -104,7 +104,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       label: item.name,
       children:
         item.children?.map((child) => {
-          const isActive = `${item.key}/${child.key}` === activeKey;
+        
           return {
             key: `${item.key}/${child.key}`,
             icon: child.icon,
