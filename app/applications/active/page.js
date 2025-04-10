@@ -110,11 +110,12 @@ const Index = () => {
               <div className="text-[#0D0E0C73]">{location}</div>
               <div>
                 
+                 
                 <Badge
-                  color={statusColors[status]}  
-                  text={status}
-                  style={{ backgroundColor: statusColors[status], padding: '2px 6px', borderRadius: '5px' }}
-                />
+        
+        count="Высокий"
+        style={{ borderColor: '#52c41a', backgroundColor: 'transparent', color: '#52c41a' }}
+      />
               </div>
               <div>{version}</div>
             </div>
