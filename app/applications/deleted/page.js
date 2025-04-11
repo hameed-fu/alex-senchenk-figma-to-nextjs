@@ -254,7 +254,7 @@ const Index = () => {
       render: (text, record) => (
         <div className="flex justify-between items-center">
           <div>
-            <Button  className="border-0"  >
+            <Button className="border-0">
               <Trash className="h-4 w-4" />
             </Button>
           </div>
@@ -469,16 +469,18 @@ const Index = () => {
           prefix={<SearchOutlined className="text-gray-400" />}
         />
       </div>
-      <Table
-        columns={columns}
-        dataSource={data}
-        rowKey="id"
-        onChange={(pagination, filters, sorter) => {
-          setFilterConfig(filters);
-        }}
-        pagination={false}
-         
-      />
+      <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200">
+        <Table
+          columns={columns}
+          dataSource={data}
+          rowKey="id"
+          onChange={(pagination, filters, sorter) => {
+            setFilterConfig(filters);
+          }}
+          pagination={false}
+          className="rounded-2xl"
+        />
+      </div>
     </div>
   );
 };

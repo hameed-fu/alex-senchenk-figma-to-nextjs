@@ -483,18 +483,21 @@ const Index = () => {
           prefix={<SearchOutlined className="text-gray-400" />}
         />
       </div>
-      <Table
-        columns={columns}
-        dataSource={data}
-        rowKey="id"
-        onChange={(pagination, filters, sorter) => {
-          setFilterConfig(filters);
-        }}
-        pagination={false}
-        rowClassName={(record, index) =>
-          index === 1 || index === 4 ? "bg-[#FFF1F0]" : ""
-        }
-      />
+
+      <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200">
+        <Table
+          columns={columns}
+          dataSource={data}
+          rowKey="id"
+          onChange={(pagination, filters, sorter) => {
+            setFilterConfig(filters);
+          }}
+          pagination={false}
+          rowClassName={(record, index) =>
+            index === 1 || index === 4 ? "bg-[#FFF1F0]" : ""
+          }
+        />
+      </div>
     </div>
   );
 };
