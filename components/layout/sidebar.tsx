@@ -24,6 +24,8 @@ const sidebarItems = [
     icon: <Edit className="h-4 w-4" />,
     key: "applications",
     children: [
+     
+      // { name: "Заявки", key: "requests" },
       { name: "Активные", key: "active" },
       { name: "Черновики", key: "drafts" },
       { name: "Опубликованные", key: "published" },

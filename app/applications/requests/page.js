@@ -469,7 +469,7 @@ const Index = () => {
     <div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div className="flex items-center">
-          <h1 className="text-2xl sm:text-3xl font-bold">Шаблоны</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold">Черновики</h1>
           <Button variant="outline" className="ml-3 rounded-full p-2">
             <Plus className="h-5 w-4" />
           </Button>
@@ -491,7 +491,9 @@ const Index = () => {
           setFilterConfig(filters);
         }}
         pagination={false}
-         
+        rowClassName={(record, index) =>
+          index === 1 || index === 4 ? "bg-[#FFF1F0]" : ""
+        }
       />
     </div>
   );
