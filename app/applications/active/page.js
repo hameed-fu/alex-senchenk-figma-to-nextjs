@@ -14,6 +14,7 @@ import {
   Typography,
   Space,
   Menu,
+  Tooltip,
 } from "antd";
 import {
   PlusOutlined,
@@ -24,8 +25,10 @@ import {
   SearchOutlined,
 } from "@ant-design/icons";
 import { EllipsisVertical, Plus } from "lucide-react";
+import Link from "next/link";
 
 const { Search } = Input;
+
 const mockData = [
   {
     id: "1",
@@ -276,7 +279,6 @@ const Index = () => {
         </div>
       ),
     },
-    ,
     {
       title: "Информация",
       key: "info",
@@ -286,40 +288,34 @@ const Index = () => {
 
         return (
           <div className="flex flex-col space-y-2">
-            <div className="font-bold">{name}</div>
-            <div className="flex flex-row space-x-4">
-              <div className="text-[#0D0E0C73]">{location}</div>
+            <Tooltip title={name}   >  
+              <Link href={`/applications/detail`}>
+                <span className="font-bold text-gray-600 hover:underline cursor-pointer">
+                  {name}
+                </span>
+              </Link>
+            </Tooltip>
+        
+            <div className="flex flex-row space-x-4 text-sm text-gray-500">
+              <div>{location}</div>
               <div>
-                <Badge
-                  count={
-                    <span
-                      style={{
-                        backgroundColor: "#fff0f6",
-                        color: "#eb2f96",
-                        border: "1px solid #eb2f96",
-                        borderRadius: "12px",
-                        padding: "2px 8px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Высокий
-                    </span>
-                  }
-                />
+                <span
+                  style={{
+                    backgroundColor: "#fff0f6",
+                    color: "#eb2f96",
+                    border: "1px solid #eb2f96",
+                    padding: "0 6px",
+                    borderRadius: "4px",
+                  }}
+                >
+                  {status}
+                </span>
               </div>
               <div>{version}</div>
             </div>
           </div>
         );
       },
-      filters: [...new Set(data.map((item) => item.position.location))].map(
-        (val) => ({
-          text: val,
-          value: val,
-        })
-      ),
-      filteredValue: filterConfig.location || null,
-      onFilter: (value, record) => record.position.location === value,
     },
     {
       title: "Статус",
