@@ -79,22 +79,21 @@ export default function DetailPage({ params }) {
           </div>
         </div>
         <div className="flex flex-wrap gap-2 justify-end">
-        <>
-  <Button
-    className="border-none bg-white rounded-full"
-    size="large"
-    onClick={() => setIsApproveModalOpen(true)}
-  >
-    <ReceiptText className="h-5" />
-    Отправить на согласование
-  </Button>
+          <>
+            <Button
+              className="border-none bg-white rounded-full"
+              size="large"
+              onClick={() => setIsApproveModalOpen(true)}
+            >
+              <ReceiptText className="h-5" />
+              Отправить на согласование
+            </Button>
 
-  <ApproveModal
-    open={isApproveModalOpen}
-    onClose={() => setIsApproveModalOpen(false)}
-  />
-</>
-
+            <ApproveModal
+              open={isApproveModalOpen}
+              onClose={() => setIsApproveModalOpen(false)}
+            />
+          </>
 
           <Button
             className="bg-white border-none"
@@ -354,6 +353,147 @@ export default function DetailPage({ params }) {
             </Row>
           </Card>
         </div>
+
+        <div className="rounded-[18px] p-0 border border-gray-300 mb-6 mt-3">
+          
+          <div className="text-[#0D0E0C73] px-4 text-[16px] py-2 font-semibold">
+          Требования к кандидату
+          </div>
+          <Card className="rounded-[18px] ">
+            <Row gutter={[16, 16]} className="mt-4">
+              <Col span={10}>
+                <p className="text-gray-400">Образование</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">
+                  Высшее профильное • Квалификация • Разработка нефтяных и
+                  газовых месторождений
+                </div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Опыт работы по должности</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">
+                  Опыт работы на должностях линейных руководителей и
+                  специалистов в области подготовки нефти — 5 лет
+                </div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Опыт работы в организации</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">
+                  НГДУ “Речицанефть” — контроль подготовки, учета и переработки
+                  нефти и газа (УПН, ЦППН), 5 лет
+                </div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Личные качества</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Личные качества</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Управленческие компетенции</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Управленческие компетенции</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Обязательные навыки</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Обязательные профессиональные навыки</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Желаемые навыки</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Желаемые профессиональные навыки</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Иностранные языки</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Английский • Немецкий</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Документы гос. образца</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Да</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Нет дискредитирующих увольнений</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Да</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Медицинские противопоказания</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Нет</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Положительная характеристика</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Да</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Водительское удостоверение</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">B; C; D</div>
+              </Col>
+
+              <Col span={10}>
+                <p className="text-gray-400">Готовность к переезду</p>
+              </Col>
+              <Col span={12}>
+                <div className="mt-2">Минск • Гомель • Речица</div>
+              </Col>
+            </Row>
+          </Card>
+        </div>
+
+        <div className="rounded-[18px] p-0 border border-gray-300 mb-6 mt-3">
+          <div className="text-[#0D0E0C73] px-4 text-[16px] py-2 font-semibold">
+            Условия труда
+          </div>
+          <Card className="rounded-[18px]">
+             <div>
+             Контроль и анализ выполнения технологических режимов подготовки и учета нефти и газа. Анализ и контроль текущих и годовых отчетов о производственной деятельности предприятия в области добычи нефти и газа, по направлению подготовки и системе сбора. Анализ и контроль за выполнением организационно-технических мероприятий в части добычи и транспортировки добываемой продукции. Формирование и контроль за выполнением программ строительства, замены и диагностики нефтепроводов и водоводов на предприятии. Контроль за выполнением программ по борьбе с коррозией нефтепроводов и водоводов. Контроль за работой установок по подготовке и переработке нефти, попутного и природного газа. Составление и корректировка заданий на закупку услуг, оборудования и нефтехимии для систем сбора и подготовки нефти и газа и поддержания пластового давления. Внедрение нового оборудования, химических реагентов и технологий в системах сбора и подготовки нефти и газа, и поддержания пластового давления. Составление и корректировка ежегодных заявок обособленных подразделений по материально-техническому обеспечению производства в подготовке и транспорту нефти. Участие в организации выполнения, контроле и учете утвержденных мероприятий, приказов, распоряжений и других руководящих документов в области деятельности отдела.
+             </div>
+          </Card>
+        </div>
+
+        <Card className="mt-4">
+          <Row justify="space-between" align="middle">
+            <Col>
+              <p strong>История</p>
+            </Col>
+            <Col>
+              <Button className="p-0 h-auto border-none text-gray-400">
+                Показать <ChevronDown />
+              </Button>
+            </Col>
+          </Row>
+        </Card>
       </div>
     </div>
   );
