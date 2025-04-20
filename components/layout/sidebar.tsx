@@ -46,6 +46,16 @@ const sidebarItems = [
     key: "job-profiles",
     children: [],
   },
+  {
+    name: "Управление организациями",
+    icon: <UsersRound className="h-4 w-4" />,
+    key: "users",
+    children: [
+      { name: "Роли", key: "roles" },  
+      { name: "Пользователи", key: "users" },  
+      { name: "Option 2", key: "list" },
+    ],
+  },  
   { type: "divider" },
   {
     name: "Справочник",
